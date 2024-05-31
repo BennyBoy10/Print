@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="FAVICON.png">
+    <title>Page title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            color: blue;
+            font-size: 17px;
+        }
+        @media (min-width: 600px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benny</h1>
+        <p>BennyBoy</p>
+        <form onsubmit="saveInput(event)">
+            <input type="text" id="name" name="name" required="">
+            <button type="submit" id="submit">Next</button>
+        </form>
+    </div>
+    <script>
+   function saveInput(event) {
+     event.preventDefault();
+      const userName = document.getElementById('name').value;
+  localStorage.setItem('userName', userName);
+    window.location.href = 'next.html';
+        }
+    </script>
+</body>
+</html>
